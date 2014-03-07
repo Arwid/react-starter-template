@@ -5,6 +5,8 @@ require("script!react/react-with-addons.js")
 require("script!jquery/jquery.js")
 
 StarterApp = require("./components/StarterApp.jsx.coffee")
+CommentBox = require("./components/CommentBox.jsx.coffee")
 
-React.renderComponent(`<StarterApp />`, document.getElementById('app'))
+# React.renderComponent(`<StarterApp />`, document.getElementById('app'))
+React.renderComponent(`<CommentBox />`, document.getElementById('app'))
 
