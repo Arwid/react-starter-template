@@ -1,10 +1,14 @@
 `/** @jsx React.DOM */`
 
+Comment = require("./Comment.jsx.coffee")
+
 CommentList = React.createClass
 	render: ->
+		commentNodes = @props.data.map (comment) ->
+			`<Comment author={comment.author}>{comment.text}</Comment>`
 		`(
 			<div className="commentList">
-				Hello, world! I am a CommenetList.
+				{commentNodes}
 			</div>
 		)`
 
