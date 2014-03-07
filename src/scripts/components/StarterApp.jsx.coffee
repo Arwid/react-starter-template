@@ -1,6 +1,6 @@
 `/** @jsx React.DOM */`
 
-Masthead = require("./Masthead.coffee")
+Masthead = require("./Masthead.jsx.coffee")
 
 ReactTransitionGroup = React.addons.TransitionGroup
 imageURL = "/images/BladeRunner.gif"
