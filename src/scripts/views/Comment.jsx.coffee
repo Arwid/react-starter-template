@@ -16,6 +16,7 @@ Comment = React.createClass
 					{this.props.comment.get("author")}
 				</h2>
 				<span dangerouslySetInnerHTML={{__html: rawMarkup}} />
+				<div className="destroy" onClick={this.props.onDestroy}>X</div>
 			</div>
 		)`
 

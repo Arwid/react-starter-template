@@ -6,13 +6,10 @@ CommentForm = require("./CommentForm.jsx.coffee")
 CommentBox = React.createClass
 	componentWillMount: ->
 		@loadCommentsFromServer()
-		setInterval @loadCommentsFromServer, @props.pollInterval
-
-	handleCommentSubmit: (comment) ->
-		@props.comments.create comment
+		# setInterval @loadCommentsFromServer, @props.pollInterval
 
 	loadCommentsFromServer: ->
-		# TODO: fetch from server
+		@props.comments.fetch()
 
 	render: ->
 		`(
@@ -20,7 +17,6 @@ CommentBox = React.createClass
 				<h1>Comments</h1>
 				<CommentForm
 					comments={this.props.comments}
-					onCommentSubmit={this.handleCommentSubmit}
 					/>
 				<CommentList comments={this.props.comments} />
 			</div>

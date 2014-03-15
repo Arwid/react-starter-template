@@ -28,6 +28,7 @@ body {
       line-height: 14px;
       margin: 0 0 5px 0;
       font-size: 12px;
+      position: relative;
       &:first-child {
         border: none;
       }
@@ -35,6 +36,26 @@ body {
         font-size: 12px;
         margin: 0 0 10px;
         font-weight: bold;
+      }
+      .destroy {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: none;
+        font-weight: bold;
+        margin-top: 10px;
+        margin-right: 10px;
+        background: #a00;
+        border-radius: 0;
+        width: 15px;
+        height: 15px;
+        text-align: center;
+        font-size: 11px;
+        color: white;
+        cursor: pointer;
+      }
+      &:hover .destroy {
+        display: block;
       }
     }
   }

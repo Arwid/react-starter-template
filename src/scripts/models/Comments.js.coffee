@@ -1,4 +1,4 @@
-class Comment extends Backbone.Model
+Comment = require("./Comment.js.coffee")
 
 class Comments extends Backbone.Collection
 	model: Comment

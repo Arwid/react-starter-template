@@ -11,7 +11,7 @@ CommentPage = React.createClass
     `(
       <div className='main'>
         <Masthead title="React Comment Box">
-          This is from the React tutorial on <a href="http://facebook.github.io/react/docs/tutorial.html">http://facebook.github.io/react/docs/tutorial.html</a>
+          This is initially from the React tutorial on <a href="http://facebook.github.io/react/docs/tutorial.html">http://facebook.github.io/react/docs/tutorial.html</a>
         </Masthead>
         <div className="container">
           <CommentBox comments={this.props.comments} pollInterval={2000} />

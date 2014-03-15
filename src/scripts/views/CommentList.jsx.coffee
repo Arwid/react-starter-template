@@ -10,7 +10,7 @@ CommentList = React.createClass
 
 	render: ->
 		commentNodes = @props.comments.map (comment) ->
-			`<Comment comment={comment} />`
+			`<Comment comment={comment} onDestroy={comment.destroy.bind(comment)} />`
 		`(
 			<div className="commentList">
 				{commentNodes}

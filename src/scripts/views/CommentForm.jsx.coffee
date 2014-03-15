@@ -15,8 +15,9 @@ CommentForm = React.createClass
 	render: ->
 		`(
 			<form className="commentForm group" onSubmit={this.handleSubmit}>
-				<input type="text" placeholder="Your name" ref="author" />
+				<input name="author" type="text" placeholder="Your name" ref="author" />
 				<textarea
+					name="text"
 					placeholder="Add comment..."
 					ref="text"
 					></textarea>

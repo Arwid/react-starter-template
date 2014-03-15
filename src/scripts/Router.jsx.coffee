@@ -8,10 +8,7 @@ class Router extends Backbone.Router
 		'*default': 'commentPage'
 
 	commentPage: ->
-		comments = new Comments([
-		  {author: "Pete Hunt", text: "This is one comment"},
-		  {author: "Jordan Walke", text: "This is *another* comment"}
-		])
+		comments = new Comments()
 		React.renderComponent(`<CommentPage comments={comments} />`, document.getElementById('app'))
 
 module.exports = Router
