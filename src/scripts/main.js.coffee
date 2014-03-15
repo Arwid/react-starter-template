@@ -7,8 +7,8 @@ require("script!showdown/compressed/showdown.js")
 require("script!lodash/dist/lodash.js")
 require("script!backbone/backbone.js")
 
-App = require("./app.js.coffee")
-Router = require("./components/Router.jsx.coffee")
+App = require("./App.js.coffee")
+Router = require("./Router.jsx.coffee")
 
 App.router = new Router()
 App.run()

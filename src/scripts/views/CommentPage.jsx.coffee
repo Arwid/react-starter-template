@@ -6,10 +6,8 @@ CommentBox = require("./CommentBox.jsx.coffee")
 ReactTransitionGroup = React.addons.TransitionGroup
 imageURL = "/images/BladeRunner.gif"
 
-StarterApp = React.createClass
+CommentPage = React.createClass
   render: () ->
-    console.log 'starter app'
-    console.log @props.comments
     `(
       <div className='main'>
         <Masthead title="React Comment Box">
@@ -21,4 +19,4 @@ StarterApp = React.createClass
       </div>
     )`
 
-module.exports = StarterApp
+module.exports = CommentPage
