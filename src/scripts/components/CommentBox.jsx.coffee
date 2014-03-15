@@ -4,14 +4,8 @@ CommentList = require("./CommentList.jsx.coffee")
 CommentForm = require("./CommentForm.jsx.coffee")
 
 CommentBox = React.createClass
-
-	getInitialState: ->
-		data:  @props.data
-
 	handleCommentSubmit: (comment) ->
-		comments = @state.data
-		newComments = comments.concat [comment]
-		@setState data: newComments
+		@props.comments.add comment
 		# TODO: submit to the server
 
 	componentWillMount: ->
@@ -28,7 +22,7 @@ CommentBox = React.createClass
 				<CommentForm
 					onCommentSubmit={this.handleCommentSubmit}
 					/>
-				<CommentList data={this.state.data} />
+				<CommentList comments={this.props.comments} />
 			</div>
 		)`
 

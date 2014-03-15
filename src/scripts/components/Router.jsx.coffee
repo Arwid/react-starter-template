@@ -7,6 +7,10 @@ Router = Backbone.Router.extend
 		'*default': 'defaultAction'
 
 	defaultAction: ->
-		React.renderComponent(`<StarterApp />`, document.getElementById('app'))
+		comments = new Backbone.Collection([
+		  {author: "Pete Hunt", text: "This is one comment"},
+		  {author: "Jordan Walke", text: "This is *another* comment"}
+		])
+		React.renderComponent(`<StarterApp comments={comments} />`, document.getElementById('app'))
 
 module.exports = Router

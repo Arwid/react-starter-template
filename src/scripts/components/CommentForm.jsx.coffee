@@ -1,12 +1,15 @@
 `/** @jsx React.DOM */`
 
 CommentForm = React.createClass
+	resetForm: ->
+		@refs.author.getDOMNode().value = ''
+		@refs.text.getDOMNode().value = ''
+
 	handleSubmit: ->
 		author = @refs.author.getDOMNode().value.trim()
 		text = @refs.text.getDOMNode().value.trim()
 		@props.onCommentSubmit {author: author, text: text}
-		@refs.author.getDOMNode().value = ''
-		@refs.text.getDOMNode().value = ''
+		@resetForm()
 		false
 
 	render: ->
