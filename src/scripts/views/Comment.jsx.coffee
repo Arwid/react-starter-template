@@ -3,19 +3,17 @@
 converter = new Showdown.converter()
 
 Comment = React.createClass
-	updateState: (model) ->
-		@setState comment: _.clone model.attributes
+	mixins: [BackboneMixin]
 
-	getInitialState: ->
-		@props.comment.on 'change', @updateState, this
-		comment: _.clone @props.comment.attributes
+	getBackboneModels: ->
+		[@props.comment]
 
 	render: ->
-		rawMarkup = converter.makeHtml @state.comment.text
+		rawMarkup = converter.makeHtml @props.comment.get("text")
 		`(
 			<div className="comment">
 				<h2 className="commentAuthor">
-					{this.state.comment.author}
+					{this.props.comment.get("author")}
 				</h2>
 				<span dangerouslySetInnerHTML={{__html: rawMarkup}} />
 			</div>

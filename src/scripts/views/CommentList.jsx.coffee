@@ -3,15 +3,13 @@
 Comment = require("./Comment.jsx.coffee")
 
 CommentList = React.createClass
-	updateState: ->
-		@setState comments: _.clone @props.comments.models
+	mixins: [BackboneMixin]
 
-	getInitialState: ->
-		@props.comments.on 'all', @updateState, this
-		comments: @props.comments.models
+	getBackboneModels: ->
+		[@props.comments]
 
 	render: ->
-		commentNodes = _.map @state.comments, (comment) ->
+		commentNodes = @props.comments.map (comment) ->
 			`<Comment comment={comment} />`
 		`(
 			<div className="commentList">

@@ -6,9 +6,9 @@ CommentForm = React.createClass
 		@refs.text.getDOMNode().value = ''
 
 	handleSubmit: ->
-		author = @refs.author.getDOMNode().value.trim()
-		text = @refs.text.getDOMNode().value.trim()
-		@props.onCommentSubmit {author: author, text: text}
+		@props.comments.create 
+			author: @refs.author.getDOMNode().value.trim()
+			text: @refs.text.getDOMNode().value.trim()
 		@resetForm()
 		false
 
