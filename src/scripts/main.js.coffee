@@ -4,7 +4,10 @@
 require("script!react/react-with-addons.js")
 require("script!jquery/jquery.js")
 require("script!showdown/compressed/showdown.js")
+require("script!lodash/dist/lodash.js")
+require("script!backbone/backbone.js")
 
-StarterApp = require("./components/StarterApp.jsx.coffee")
+Router = require("./components/Router.jsx.coffee")
 
-React.renderComponent(`<StarterApp />`, document.getElementById('app'))
+new Router()
+Backbone.history.start()
